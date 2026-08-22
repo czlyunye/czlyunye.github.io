@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>摄影 · 云野 Yunye</title>
-  <meta name="description" content="云野的摄影画廊——山野、光影、人像、城市。">
+  <title>个人Blog · 云野 Yunye</title>
+  <meta name="description" content="云野的个人博客——量化、AI、经济学与管理的思考记录。">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body data-title-key="doc.title.photography">
+<body data-title-key="doc.title.blog">
 
   <header class="site-header">
     <nav class="nav container">
@@ -25,12 +25,26 @@
 
   <main class="container">
     <div class="page-head">
-      <h1><span data-i18n="photo.title"></span><span class="en" data-i18n="photo.title.en"></span></h1>
-      <p class="sub" data-i18n="photo.sub"></p>
+      <h1><span data-i18n="blog.title"></span><span class="en" data-i18n="blog.title.en"></span></h1>
+      <p class="sub" data-i18n="blog.sub"></p>
     </div>
 
-    <div class="filter-bar"></div>
-    <div class="gallery"></div>
+    <div class="blog-topics">
+      <span class="topics-label" data-i18n="blog.topics"></span>
+      <div class="tags">
+        <span class="tag" data-i18n="interest.1"></span>
+        <span class="tag" data-i18n="interest.2"></span>
+        <span class="tag" data-i18n="interest.3"></span>
+        <span class="tag" data-i18n="interest.4"></span>
+      </div>
+    </div>
+
+    <div id="post-list"></div>
+
+    <div class="empty-state" id="blog-empty">
+      <div class="zh" data-i18n="blog.empty"></div>
+      <div class="en" data-i18n="blog.empty.en"></div>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -42,6 +56,7 @@
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/photos.js"></script>
+  <script src="assets/js/posts.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

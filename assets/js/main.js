@@ -145,6 +145,34 @@
       </div>`;
   }
 
+  /* ---------- 博客文章列表 ---------- */
+  function renderPosts() {
+    const list = document.getElementById("post-list");
+    if (!list) return;
+    const empty = document.getElementById("blog-empty");
+    list.innerHTML = "";
+    if (typeof POSTS === "undefined" || POSTS.length === 0) {
+      if (empty) empty.style.display = "";
+      return;
+    }
+    if (empty) empty.style.display = "none";
+    POSTS.slice()
+      .sort((a, b) => (b.date || "").localeCompare(a.date || ""))
+      .forEach(p => {
+        const item = document.createElement("a");
+        item.className = "post-item";
+        item.href = p.url;
+        item.innerHTML = `
+          <div class="post-date">${p.date || ""}</div>
+          <div>
+            <h3>${L(p.title)}</h3>
+            ${p.excerpt ? `<p class="post-excerpt">${L(p.excerpt)}</p>` : ""}
+            <span class="post-more">${t("blog.readmore")}</span>
+          </div>`;
+        list.appendChild(item);
+      });
+  }
+
   /* ---------- 联系页二维码（有图则显示，无图显示占位） ---------- */
   function renderQRCodes() {
     document.querySelectorAll(".qr-item[data-qr]").forEach(item => {
@@ -166,6 +194,7 @@
     renderFilterBar();
     renderGallery();
     renderFeatured();
+    renderPosts();
     renderQRCodes();
 
     document.querySelectorAll(".footer-year").forEach(el => {
@@ -178,5 +207,6 @@
     renderFilterBar();
     renderGallery();
     renderFeatured();
+    renderPosts();
   };
 })();
