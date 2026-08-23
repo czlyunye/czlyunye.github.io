@@ -180,6 +180,7 @@
       const label = item.querySelector(".label").textContent;
       const img = new Image();
       img.alt = label;
+      if (item.dataset.qrPos) img.style.objectPosition = item.dataset.qrPos;
       img.onload = () => {
         item.querySelector(".qr-box").replaceWith(img);
       };
