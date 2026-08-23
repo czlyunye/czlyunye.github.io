@@ -10,10 +10,12 @@
 
   /* ---------- 导航当前页高亮 ---------- */
   function markActiveNav() {
-    const page = location.pathname.split("/").pop() || "index.html";
+    const path = location.pathname;
+    const page = path.split("/").pop() || "index.html";
+    const inPosts = path.includes("/posts/");
     document.querySelectorAll(".nav-links a").forEach(a => {
-      const href = a.getAttribute("href");
-      a.classList.toggle("active", href === page || (page === "" && href === "index.html"));
+      const href = a.getAttribute("href").replace(/^\.\.\//, "");
+      a.classList.toggle("active", href === page || (inPosts && href === "blog.html") || (page === "" && href === "index.html"));
     });
   }
 
@@ -162,6 +164,7 @@
         const item = document.createElement("a");
         item.className = "post-item";
         item.href = p.url;
+        if (/^https?:/.test(p.url)) { item.target = "_blank"; item.rel = "noopener"; }
         item.innerHTML = `
           <div class="post-date">${p.date || ""}</div>
           <div>

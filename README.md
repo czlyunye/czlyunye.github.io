@@ -11,8 +11,10 @@ czlyunye.github.io/
 ├── photography.html    摄影画廊
 ├── blog.html           个人 Blog
 ├── contact.html        联系
+├── posts/              博客文章正文页（每篇一个 HTML）
 ├── images/
 │   ├── avatar.jpg      头像
+│   ├── blog/           博客文章配图
 │   ├── gallery/        摄影作品（大图）
 │   │   └── thumbs/     作品缩略图（列表页用，加载更快）
 │   └── contact/        微信/小红书二维码放这里

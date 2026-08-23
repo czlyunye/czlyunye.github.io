@@ -244,6 +244,27 @@ img { display: block; max-width: 100%; }
 .post-excerpt { font-size: 14px; color: #4a4f57; margin-top: 6px; }
 .post-more { display: inline-block; font-size: 13px; color: var(--accent); margin-top: 8px; }
 
+/* ---------- 文章页 ---------- */
+.article { max-width: 720px; margin: 0 auto; padding-bottom: 72px; }
+.article-head { text-align: center; padding: 64px 0 44px; }
+.article-head h1 { font-family: var(--serif); font-size: 34px; letter-spacing: .08em; }
+.article-meta { color: var(--muted); font-size: 13.5px; margin-top: 14px; letter-spacing: .06em; }
+.article-intro { text-align: center; color: #3c414a; font-size: 15px; line-height: 2.2; padding-bottom: 24px; }
+.term-block { margin: 60px 0; }
+.term-name {
+  text-align: center; font-family: var(--serif); font-size: 24px;
+  letter-spacing: .3em; text-indent: .3em; color: var(--accent-deep);
+}
+.term-name .en {
+  display: block; font-family: var(--sans); font-size: 11px; letter-spacing: .22em;
+  color: var(--muted); margin-top: 8px; text-transform: uppercase; text-indent: 0;
+}
+.term-verse { text-align: center; color: #565b63; font-size: 14.5px; letter-spacing: .12em; margin: 16px 0 24px; }
+.term-block img { border-radius: 6px; width: 100%; }
+.article-outro { text-align: center; font-family: var(--serif); font-size: 16.5px; line-height: 2.4; color: #3c414a; margin: 70px 0 34px; }
+.article-credits { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
+.article-source { text-align: center; margin-top: 48px; padding-top: 30px; border-top: 1px solid var(--line); font-size: 13.5px; }
+
 /* ---------- 联系页 ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; }
 .contact-card {
