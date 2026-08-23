@@ -134,7 +134,7 @@
       if (host) host.closest(".section").style.display = "none";
       return;
     }
-    const p = PHOTOS[0];
+    const p = PHOTOS.find(x => x.featured) || PHOTOS[0];
     host.innerHTML = `
       <img src="${p.thumb || p.src}" alt="${L(p.title)}">
       <div class="featured-body">
