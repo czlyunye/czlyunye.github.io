@@ -263,7 +263,6 @@ img { display: block; max-width: 100%; }
 .term-block img { border-radius: 6px; width: 100%; }
 .article-outro { text-align: center; font-family: var(--serif); font-size: 16.5px; line-height: 2.4; color: #3c414a; margin: 70px 0 34px; }
 .article-credits { text-align: center; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
-.article-source { text-align: center; margin-top: 48px; padding-top: 30px; border-top: 1px solid var(--line); font-size: 13.5px; }
 
 /* ---------- 联系页 ---------- */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 760px; }

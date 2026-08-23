@@ -58,7 +58,6 @@ const I18N = {
     "blog.empty": "第一篇文章正在酝酿中",
     "blog.empty.en": "The first post is on its way",
     "blog.readmore": "阅读全文 →",
-    "post.original": "阅读原文（微信版）",
 
     "contact.title": "联系",
     "contact.title.en": "Contact",
@@ -125,7 +124,6 @@ const I18N = {
     "blog.empty": "The first post is on its way",
     "blog.empty.en": "第一篇文章正在酝酿中",
     "blog.readmore": "Read more →",
-    "post.original": "Read the original on WeChat",
 
     "contact.title": "Contact",
     "contact.title.en": "联系",

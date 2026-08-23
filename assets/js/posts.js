@@ -7,20 +7,12 @@
    ============================================ */
 
 const POSTS = [
-  // 方案二：站内排版页
   {
     url: "posts/2024-01-20-shiling.html",
     title:   { zh: "年度精选 | 时令", en: "Annual Selections | The 24 Solar Terms" },
     date: "2024-01-20",
-    excerpt: { zh: "二十四节气摄影合集——每个节气，一句诗，一张图。（站内排版版）",
-               en: "A photographic journey through the 24 solar terms — one verse, one image each. (On-site version)" }
-  },
-  // 方案一：直接跳转微信原文
-  {
-    url: "https://mp.weixin.qq.com/s/sMKhDHswwvYis6zPLfHpnw",
-    title:   { zh: "年度精选 | 时令（微信原文）", en: "Annual Selections | The 24 Solar Terms (WeChat original)" },
-    date: "2024-01-20",
-    excerpt: { zh: "点击跳转到公众号「视平线」，阅读原版排版。", en: "Opens the original layout on the WeChat official account “视平线”." }
+    excerpt: { zh: "二十四节气摄影合集——每个节气，一句诗，一张图。",
+               en: "A photographic journey through the 24 solar terms — one verse, one image each." }
   },
 
   // 以后再发新文章，复制下面这段改内容：
