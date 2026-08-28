@@ -191,10 +191,11 @@
     });
   }
 
-  /* ---------- 启动 ---------- */
-  document.addEventListener("DOMContentLoaded", () => {
+  /* ---------- 启动（PJAX 换页后也会再次调用） ---------- */
+  function initPage() {
+    applyLang();
     markActiveNav();
-    buildLightbox();
+    if (!document.querySelector(".lightbox")) buildLightbox();
     renderFilterBar();
     renderGallery();
     renderFeatured();
@@ -204,7 +205,9 @@
     document.querySelectorAll(".footer-year").forEach(el => {
       el.textContent = new Date().getFullYear();
     });
-  });
+  }
+  window.initPage = initPage;
+  document.addEventListener("DOMContentLoaded", initPage);
 
   // 语言切换时重渲染动态内容
   window.onLangChange = function () {
