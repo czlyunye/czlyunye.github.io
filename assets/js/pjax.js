@@ -4,6 +4,28 @@
    页头/播放器/灯箱保持不变 —— 音乐跨页播放不中断。
    ============================================ */
 (function () {
+  /* 顶部加载进度条 —— 点击后立即有反馈 */
+  const bar = document.createElement("div");
+  bar.id = "pjax-progress";
+  document.body.appendChild(bar);
+  let barTimer;
+  function barStart() {
+    clearTimeout(barTimer);
+    bar.style.transition = "none";
+    bar.style.width = "0";
+    bar.style.opacity = "1";
+    void bar.offsetWidth;
+    bar.style.transition = "";
+    bar.style.width = "18%";
+    barTimer = setTimeout(() => { bar.style.width = "72%"; }, 300);
+  }
+  function barDone() {
+    clearTimeout(barTimer);
+    bar.style.width = "100%";
+    setTimeout(() => { bar.style.opacity = "0"; }, 250);
+    setTimeout(() => { bar.style.width = "0"; }, 600);
+  }
+
   function isInternal(a) {
     if (!a || a.target === "_blank" || a.hasAttribute("download")) return false;
     const href = a.getAttribute("href");
@@ -32,14 +54,20 @@
 
   async function navigate(url, push) {
     const seq = ++navSeq;
+    barStart();
     let res;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 8000);   // 8 秒超时
     try {
-      res = await fetch(url);
+      res = await fetch(url, { signal: ctrl.signal });
       if (!res.ok) throw 0;
     } catch {
-      location.href = url;   // 抓取失败则回退到正常跳转
+      clearTimeout(timer);
+      barDone();
+      location.href = url;   // 超时或失败则回退到整页跳转
       return;
     }
+    clearTimeout(timer);
     const html = await res.text();
     if (seq !== navSeq) return;   // 期间发生了更新的导航，丢弃本次结果
     const doc = new DOMParser().parseFromString(html, "text/html");
@@ -57,6 +85,7 @@
     if (push) history.pushState({}, "", url);
     window.scrollTo(0, 0);
     if (window.initPage) window.initPage();
+    barDone();
   }
 
   document.addEventListener("click", e => {

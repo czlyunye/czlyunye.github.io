@@ -328,6 +328,14 @@ img { display: block; max-width: 100%; }
 }
 .mp-chip.show { opacity: 1; transform: none; }
 
+/* PJAX 顶部进度条 */
+#pjax-progress {
+  position: fixed; top: 0; left: 0; z-index: 1200;
+  width: 0; height: 2px; background: var(--accent);
+  opacity: 0; transition: width .35s ease, opacity .3s ease;
+  pointer-events: none;
+}
+
 /* macOS 风格歌词条 */
 .lyrics-bar {
   position: fixed; top: 76px; left: 50%; z-index: 940;
