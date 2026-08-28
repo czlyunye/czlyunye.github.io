@@ -28,7 +28,10 @@
     });
   }
 
+  let navSeq = 0;
+
   async function navigate(url, push) {
+    const seq = ++navSeq;
     let res;
     try {
       res = await fetch(url);
@@ -38,6 +41,7 @@
       return;
     }
     const html = await res.text();
+    if (seq !== navSeq) return;   // 期间发生了更新的导航，丢弃本次结果
     const doc = new DOMParser().parseFromString(html, "text/html");
     const newMain = doc.querySelector("main");
     const curMain = document.querySelector("main");

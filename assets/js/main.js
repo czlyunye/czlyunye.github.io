@@ -148,9 +148,19 @@
   }
 
   /* ---------- 博客文章列表 ---------- */
-  function renderPosts() {
+  function renderPosts(retried) {
     const list = document.getElementById("post-list");
     if (!list) return;
+    // posts.js 因网络问题没加载成功时，动态补载一次
+    if (typeof POSTS === "undefined" && !retried) {
+      const s = document.createElement("script");
+      const base = location.pathname.includes("/posts/") ? "../" : "";
+      s.src = base + "assets/js/posts.js";
+      s.onload = () => renderPosts(true);
+      s.onerror = () => renderPosts(true);
+      document.head.appendChild(s);
+      return;
+    }
     const empty = document.getElementById("blog-empty");
     list.innerHTML = "";
     if (typeof POSTS === "undefined" || POSTS.length === 0) {
