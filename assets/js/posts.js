@@ -9,10 +9,10 @@
 const POSTS = [
   {
     url: "after-ai/",
-    title:   { zh: "AI 替我们干活以后，为什么我们反而更累了？", en: "After AI Does the Work, Why Are We More Tired?" },
+    title:   { zh: "和 Kira 的一场对谈", en: "A Conversation with Kira" },
     date: "2026-11-15",
-    excerpt: { zh: "能力边界被推开了，空闲却没有出现。和 Kira 的一场对谈。",
-               en: "Capability expanded, and the spare time never arrived. A conversation with Kira." }
+    excerpt: { zh: "AI 替我们干活以后，为什么我们反而更累了？",
+               en: "After AI does the work for us, why are we more tired?" }
   },
   {
     url: "posts/2024-01-20-shiling.html",
