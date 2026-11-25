@@ -8,6 +8,13 @@
 
 const POSTS = [
   {
+    url: "posts/2026-11-26-producer.html",
+    title:   { zh: "进入生产，才进入社会", en: "To Enter Production Is to Enter Society" },
+    date: "2026-11-26",
+    excerpt: { zh: "社会的实体是生产关系。只停在消费里，认识就停在价格和选择上。",
+               en: "Society is the relations of production. Consumption alone stops at prices and choices." }
+  },
+  {
     url: "after-ai/",
     title:   { zh: "和 Kira 的一场对谈", en: "A Conversation with Kira" },
     date: "2026-11-15",
